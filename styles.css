@@ -1,0 +1,47 @@
+body {
+    background-color: rgba(128, 128, 128, 0.428);
+    margin-left: 50px;
+}
+
+main {
+    margin-left: 10px;
+}
+
+h2 {
+    margin: 0px 0px 0px 110px;
+}
+
+.grid-container {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px black,-5px 5px black;
+    display: inline-grid;
+    grid-template-columns:auto auto auto;
+    font-weight: 800;
+}
+
+.grid-item {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 1px;
+    text-align: center;
+}
+
+div {
+    padding: 10px;
+    border-style: groove;
+}
+
+.start-button {
+    margin-left: 100px;
+}
+
+label  {
+    margin-left: 20px;
+    padding: 5px;
+}
+
+input {
+    margin:  0px 0px 10px 25px;
+}

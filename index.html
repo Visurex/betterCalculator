@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome to my Calculator</h1>
+        </header>
+        <main>
+            <label>
+                <h2 id="h2">0</h2>
+                <input type="text" id="input1" value="0">
+                <button onclick="operatorPlus(arrayInput)" id="plus">+</button>
+                <button onclick="operatorMinus(arrayInput)" id="minus">-</button>
+                <button onclick="operatorMultiply(arrayInput)" id="multiply">*</button>
+                <button onclick="operatorDivision(arrayInput)" id="division">/</button>
+            </label>
+
+            <div class="grid-container">
+                <div class="grid-item" id="one"  >1</div>
+                <div class="grid-item" id="two"  >2</div>
+                <div class="grid-item" id="tree" >3</div>
+                <div class="grid-item" id="four" >4</div>
+                <div class="grid-item" id="five" >5</div>
+                <div class="grid-item" id="six"  >6</div>
+                <div class="grid-item" id="seven">7</div>
+                <div class="grid-item" id="eight">8</div>
+                <div class="grid-item" id="nine" >9</div>
+                <div class="grid-item" id="clear" onclick="clear(arrayInput)">Clear</div>
+                <div class="grid-item" id="zero" >0</div>
+                <div class="grid-item" id="submit" onclick="submit(arrayInput)">Submit</div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Made by Visurex;</p>
+        </footer>
+
+        <script>
+            /*------------- calculator -------------*/
+
+            function eventClick(h2, array) {
+                array.push(h2.innerHTML);
+                arrayToString = array.join("")
+                stringArray();
+            };
+            function operatorPlus(array) {
+                array.push("+");
+                arrayToString = array.join("")
+                stringArray();
+            };
+            function operatorMinus(array) {
+                array.push("-");
+                arrayToString = array.join("");
+                stringArray();
+            };
+            function operatorMultiply(array) {
+                array.push("*");
+                arrayToString = array.join("");
+                stringArray();
+            };
+            function operatorDivision(array) {
+                array.push("/");
+                arrayToString = array.join("");
+                stringArray();
+            };
+            function clear(array) {
+                array.pop();
+                arrayToString = array.join("");
+                stringArray();
+            };
+            function submit(array) {
+                arrayToString = array.join("");
+                h2.innerHTML = eval(arrayToString);
+                h2.style.color = "blue";
+            };
+
+            const arrayInput = [];
+            const h2    = document.getElementById("h2");
+            const ONE   = document.querySelector("#one");
+            const TWO   = document.querySelector("#two");
+            const THREE = document.querySelector("#tree");
+            const FOUR  = document.querySelector("#four");
+            const FIVE  = document.querySelector("#five");
+            const SIX   = document.querySelector("#six");
+            const SEVEN = document.querySelector("#seven");
+            const EIGHT = document.querySelector("#eight");
+            const NINE  = document.querySelector("#nine");
+            const ZERO  = document.querySelector("#zero");
+            const ev1 = ONE.addEventListener("click", () =>{ h2.innerHTML = 1; eventClick(h2, arrayInput)})
+            const ev2 = TWO.addEventListener("click", () =>{ h2.innerHTML = 2; eventClick(h2, arrayInput)});
+            const ev3 = THREE.addEventListener("click", () =>{ h2.innerHTML = 3; eventClick(h2, arrayInput)});
+            const ev4 = FOUR.addEventListener("click", () =>{ h2.innerHTML = 4; eventClick(h2, arrayInput)});
+            const ev5 = FIVE.addEventListener("click", () =>{ h2.innerHTML = 5; eventClick(h2, arrayInput)});
+            const ev6 = SIX.addEventListener("click", () =>{ h2.innerHTML = 6; eventClick(h2, arrayInput)});
+            const ev7 = SEVEN.addEventListener("click", () =>{ h2.innerHTML = 7; eventClick(h2, arrayInput)});
+            const ev8 = EIGHT.addEventListener("click", () =>{ h2.innerHTML = 8; eventClick(h2, arrayInput)});
+            const ev9 = NINE.addEventListener("click", () =>{ h2.innerHTML = 9; eventClick(h2, arrayInput)});
+            const ev0 = ZERO.addEventListener("click", () =>{ h2.innerHTML = 0; eventClick(h2, arrayInput)});   
+            const stringArray = () => document.querySelector("#input1").value = arrayToString;
+        </script>
+    </body>
+</html>
